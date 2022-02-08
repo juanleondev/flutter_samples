@@ -1,0 +1,13 @@
+{
+    "@@locale": "en",
+    "counterAppBarTitle": "Counter",
+    "@counterAppBarTitle": {
+        "description": "Text shown in the AppBar of the Counter Page"
+    },
+    "homeAppBarTitle": "Flutter Examples",
+    "@homeAppBarTitle": {
+        "description": "Text shown in the AppBar of the Home Page"
+    },
+    "homeDebounceButton": "Debounce example",
+    "debouncePageTitle": "Debounce"
+}

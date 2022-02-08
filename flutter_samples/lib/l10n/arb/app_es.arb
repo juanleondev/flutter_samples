@@ -1,0 +1,13 @@
+{
+    "@@locale": "es",
+    "counterAppBarTitle": "Contador",
+    "@counterAppBarTitle": {
+        "description": "Texto mostrado en la AppBar de la página del contador"
+    },
+    "homeAppBarTitle": "Ejemplos de Flutter",
+    "@homeAppBarTitle": {
+        "description": "Texto mostrado en la AppBar de la página principal"
+    },
+    "homeDebounceButton": "Ejemplo de debounce",
+    "debouncePageTitle": "Debounce"
+}
