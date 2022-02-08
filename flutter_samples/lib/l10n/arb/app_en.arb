@@ -13,5 +13,6 @@
     "debounceSubtitle1": "TextField without debounce",
     "debounceSubtitle2": "TextField with debounce",
     "debounceResultTitle": "Entered text:",
-    "debounceHintText": "Enter a text" 
+    "debounceHintText": "Enter a text",
+    "debounceCounterTitle": "Changes counter:"
 }

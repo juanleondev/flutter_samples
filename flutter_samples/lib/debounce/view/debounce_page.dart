@@ -37,7 +37,7 @@ class _TextFieldWithoutDebounce extends StatefulWidget {
 
 class __TextFieldWithoutDebounceState extends State<_TextFieldWithoutDebounce> {
   String query = '';
-
+  int changesCounter = 0;
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
@@ -55,15 +55,24 @@ class __TextFieldWithoutDebounceState extends State<_TextFieldWithoutDebounce> {
           onChanged: (value) {
             setState(() {
               query = value;
+              changesCounter++;
             });
           },
         ),
         const SizedBox(
           height: 20,
         ),
-        Row(
-          children: [Text('${l10n.debounceResultTitle} $query')],
-        )
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text('${l10n.debounceResultTitle} $query'),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text('${l10n.debounceCounterTitle} $changesCounter'),
+        ),
       ],
     );
   }
@@ -80,13 +89,14 @@ class __TextFieldWithDebounceState extends State<_TextFieldWithDebounce> {
   String query = '';
   Timer? _debounceTimer;
   Duration debounceDuration = const Duration(milliseconds: 500);
-
+  int changesCounter = 0;
   void _onChangedWithDebounce(String value) {
     if (_debounceTimer?.isActive ?? false) _debounceTimer!.cancel();
     _debounceTimer = Timer(debounceDuration, () {
       // here you can add actions with debounce
       setState(() {
         query = value;
+        changesCounter++;
       });
     });
   }
@@ -116,9 +126,16 @@ class __TextFieldWithDebounceState extends State<_TextFieldWithDebounce> {
         const SizedBox(
           height: 20,
         ),
-        Row(
-          children: [Text('${l10n.debounceResultTitle} $query')],
-        )
+        Align(
+            alignment: Alignment.centerLeft,
+            child: Text('${l10n.debounceResultTitle} $query')),
+        const SizedBox(
+          height: 10,
+        ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text('${l10n.debounceCounterTitle} $changesCounter'),
+        ),
       ],
     );
   }

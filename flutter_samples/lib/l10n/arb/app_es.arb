@@ -13,5 +13,6 @@
     "debounceSubtitle1": "TextField sin debounce",
     "debounceSubtitle2": "TextField con debounce",
     "debounceResultTitle": "Texto ingresado:",
-    "debounceHintText": "Introduce un texto"
+    "debounceHintText": "Introduce un texto",
+    "debounceCounterTitle": "Contador de cambios:"
 }
