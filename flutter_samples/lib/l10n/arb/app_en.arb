@@ -9,5 +9,9 @@
         "description": "Text shown in the AppBar of the Home Page"
     },
     "homeDebounceButton": "Debounce example",
-    "debouncePageTitle": "Debounce"
+    "debouncePageTitle": "Debounce",
+    "debounceSubtitle1": "TextField without debounce",
+    "debounceSubtitle2": "TextField with debounce",
+    "debounceResultTitle": "Entered text:",
+    "debounceHintText": "Enter a text" 
 }
