@@ -9,6 +9,7 @@
         "description": "Texto mostrado en la AppBar de la página principal"
     },
     "homeDebounceButton": "Ejemplo de debounce",
+    "homeImageGeneratorButton" : "Generador de imágenes",
     "debouncePageTitle": "Debounce",
     "debounceSubtitle1": "TextField sin debounce",
     "debounceSubtitle2": "TextField con debounce",

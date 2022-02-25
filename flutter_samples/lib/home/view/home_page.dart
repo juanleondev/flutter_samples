@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_samples/debounce/view/debounce_page.dart';
+import 'package:flutter_samples/image_generator/image_generator.dart';
 import 'package:flutter_samples/l10n/l10n.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,7 +26,21 @@ class HomePage extends StatelessWidget {
               );
             },
             child: Text(l10n.homeDebounceButton),
-          )
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push<dynamic>(
+                context,
+                MaterialPageRoute<dynamic>(
+                  builder: (_) => const ImageGeneratorPage(),
+                ),
+              );
+            },
+            child: Text(l10n.homeImageGeneratorButton),
+          ),
         ],
       ),
     );
