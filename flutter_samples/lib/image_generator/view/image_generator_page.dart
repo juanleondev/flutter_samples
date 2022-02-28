@@ -2,11 +2,17 @@
 
 import 'dart:convert';
 import 'dart:html' show AnchorElement;
-import 'dart:ui' as ui;
 import 'dart:math';
+import 'dart:ui' as ui;
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_samples/image_generator/widgets/template_image.dart';
+
+final isWebMobile = kIsWeb &&
+    (defaultTargetPlatform == TargetPlatform.iOS ||
+        defaultTargetPlatform == TargetPlatform.android);
 
 class ImageGeneratorPage extends StatefulWidget {
   const ImageGeneratorPage({Key? key}) : super(key: key);
@@ -69,15 +75,32 @@ class _ImageGeneratorPageState extends State<ImageGeneratorPage> {
                       format: ui.ImageByteFormat.png,
                     );
                     final pngBytes = byteData!.buffer.asUint8List();
-                    final content = base64Encode(pngBytes);
-                    AnchorElement(
-                      href:
-                          'data:application/octet-stream;charset=utf-16le;base64,$content',
-                    )
-                      ..setAttribute('download', 'tu_secreto_flutter.png')
-                      ..click();
+
+                    if (isWebMobile) {
+                      await Navigator.push<dynamic>(
+                        context,
+                        MaterialPageRoute<dynamic>(
+                          builder: (_) => Scaffold(
+                            appBar: AppBar(),
+                            body: SizedBox.expand(
+                              child: Image.memory(pngBytes),
+                            ),
+                          ),
+                        ),
+                      );
+                    } else {
+                      final content = base64Encode(pngBytes);
+                      AnchorElement(
+                        href:
+                            'data:application/octet-stream;charset=utf-16le;base64,$content',
+                      )
+                        ..setAttribute('download', 'tu_secreto_flutter.png')
+                        ..click();
+                    }
                   },
-                  icon: const Icon(Icons.download),
+                  icon: Icon(
+                    isWebMobile ? Icons.arrow_forward_ios : Icons.download,
+                  ),
                 )
               ],
             ),
