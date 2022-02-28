@@ -23,3 +23,7 @@ In this sample you will learn how to add debounce to functions. [Code](https://g
 
 ![image](https://user-images.githubusercontent.com/8674244/153091516-1b21d87f-6c23-4849-8411-920c1f0c459c.png)
 
+### Image generator
+In this sample you will learn how to generate images with RepaintBoundary. [Code](https://github.com/juanleondev/flutter_samples/blob/master/flutter_samples/lib/image_generator/view/image_generator_page.dart)
+
+![image](https://user-images.githubusercontent.com/8674244/156029474-3322b44d-9b54-4753-a779-b1830a77fe5f.png)
